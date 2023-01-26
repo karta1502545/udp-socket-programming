@@ -19,14 +19,14 @@ This project contains an udp server and a client written in c.
 # Expected Result
 ## Server Side
 >Socket created successfully
->Done with binding
->Listening for incoming messages...
->
->Received message from IP: 127.0.0.1 and port: 58549
->Message from client: hello from client
+Done with binding
+Listening for incoming messages...
+
+Received message from IP: 127.0.0.1 and port: 58549
+Message from client: hello from client
 
 ## Client Side
 >Socket created successfully
->Send the message to server...
->Received message from IP: 127.0.0.1 and port: 2000
->Server's response: hello from client
+Send the message to server...
+Received message from IP: 127.0.0.1 and port: 2000
+Server's response: hello from client
