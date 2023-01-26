@@ -1,10 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
 
-int main(void){
+int main (int argc, char *argv[]) {
+    if (argc != 3) {
+        printf("2 parameters are expected. Server IP and port.\n");
+    }
+    char serverIP[20];
+    strcpy(serverIP, argv[1]);
+    int port = atoi(argv[2]);
+
     int socket_desc; // server socket id
     struct sockaddr_in server_addr, client_addr; // ip address of server and client
     char server_message[2000], client_message[2000];
@@ -25,8 +33,8 @@ int main(void){
     
     // Set port and IP:
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(2000);
-    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    server_addr.sin_port = htons(port);
+    server_addr.sin_addr.s_addr = inet_addr(serverIP);
     
     // Bind the socket to the port and the server's IP:
     if(bind(socket_desc, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0){

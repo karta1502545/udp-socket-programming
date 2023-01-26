@@ -57,7 +57,7 @@ int main (int argc, char *argv[]) {
 
     // set socket timeout
     struct timeval tv;
-    tv.tv_sec = 1; // 5 sec
+    tv.tv_sec = 1; // 1 sec
     tv.tv_usec = 0;
     if (setsockopt(socket_desc, SOL_SOCKET, SO_SNDTIMEO, &tv,sizeof(tv)) < 0) {
         perror("Cannot set socket timeout");
